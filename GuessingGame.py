@@ -1,25 +1,27 @@
 print("Let's play guess the number!")
 print()
-print("Pick a number between 1 and 100 and see when you can guess it right!")
+print("Guess a number between 1 and 100, and let's see when you get it right!")
 print()
-print("Let's begin!")
-correct_number = 57
+
+correctNumber = 66
 attempt = 1
+
 while True:
-  user_guess = int(input("Pick a number between 1 and 100: "))
-  if user_guess < 0:
+  userguess = int(input("Pick a number between 1 and 100. "))
+  if userguess < 0:
     print("Nope! It's not a negative number!")
-    exit()
-  if user_guess < correct_number:
+    attempt +=1
+    continue
+  if userguess < correctNumber:
     print("Nope, too low!")
     attempt += 1
-  elif user_guess > correct_number:
-    print("Too high! Try again!")
+  elif userguess > correctNumber:
+    print("That number is too high. Try again!")
     attempt += 1
     continue
-  elif user_guess == correct_number:
-    print("You WIN! ")
-    break 
+  elif userguess == correctNumber:
+    print("It took you", attempt, "attempt(s) to get the correct answer.")
+    print("YOU WIN")
+    break
   else:
-    print("That is not a number. ")
-print("It took you", attempt, "attempt(s) to get the correct answer.")
+    print("That is not a number you can use.")
